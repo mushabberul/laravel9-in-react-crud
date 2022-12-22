@@ -1,9 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Nav } from './Nav';
+import ContactList from './ContactList';
+import AddContact from './AddContact';
 
 export default function App() {
     return (
-        <div>This is App</div>
+        <BrowserRouter>
+            <Nav />
+            <Routes>
+                <Route path='/' element={<ContactList />} />
+                <Route path='/add-contact' element={<AddContact />} />
+            </Routes>
+        </BrowserRouter>
     )
 }
 
